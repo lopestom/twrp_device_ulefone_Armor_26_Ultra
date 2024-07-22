@@ -1,0 +1,70 @@
+# fstab file by lopestom for Ulefone Armor 26 Ultra WT -- A500V5TN7.GQU2.Ulefone.HJ.FHD.U8.20240625.V3.03
+
+#<mnt_point>        <type>    <device>                                               <mnt_flags and options>
+/system           erofs      /dev/block/mapper/system           flags=backup=1;wipeingui;logical;display="System";slotselect
+/vendor           erofs      /dev/block/mapper/vendor           flags=backup=1;wipeingui;logical;display="Vendor";slotselect
+/product          erofs      /dev/block/mapper/product          flags=backup=1;wipeingui;logical;display="Product";slotselect
+/system_ext       erofs      /dev/block/mapper/system_ext       flags=backup=1;wipeingui;logical;display="System_Ext";slotselect
+
+# Images
+/system_image        emmc      /dev/block/mapper/system         flags=backup=1;flashimg=1;slotselect;logical;display="System_Image"
+/vendor_image        emmc      /dev/block/mapper/vendor         flags=backup=1;flashimg=1;slotselect;logical;display="Vendor_Image"
+/product_image       emmc      /dev/block/mapper/product        flags=backup=1;flashimg=1;slotselect;logical;display="Product_Image"
+/system_ext_image    emmc      /dev/block/mapper/system_ext     flags=backup=1;flashimg=1;slotselect;logical;display="SystExt_Image"
+
+# Boot
+/boot        emmc      /dev/block/by-name/boot        flags=display=Boot;backup=1;flashimg=1;slotselect
+/dtbo        emmc      /dev/block/by-name/dtbo        flags=display=dtbo;backup=1;flashimg=1;slotselect
+
+# VBMeta
+/vbmeta        emmc      /dev/block/by-name/vbmeta             flags=display=vbmeta;backup=1;flashimg=1;slotselect
+/vbmeta_vendor        emmc      /dev/block/by-name/vbmeta_vendor   flags=display=vbmeta;slotselect;backup=1;flashimg=1;slotselect
+/vbmeta_system        emmc      /dev/block/by-name/vbmeta_system   flags=display=vbmeta;slotselect;backup=1;flashimg=1;slotselect
+
+# Other
+/protect_f            ext4      /dev/block/by-name/protect1     flags=display=protect_f;backup=1
+/protect_s            ext4      /dev/block/by-name/protect2     flags=display=protect_s;backup=1
+/nvdata        ext4      /dev/block/by-name/nvdata              flags=display=NvData;backup=1
+/nvcfg         ext4      /dev/block/by-name/nvcfg               flags=display=NvCfg;backup=1
+/persist              ext4      /dev/block/by-name/persist      flags=display=persist;backup=1
+/persist_image      emmc      /dev/block/by-name/persist        flags=display="persist_image";backup=1;flashimg=1
+/persistent           emmc      /dev/block/by-name/frp          flags=display=FRP;backup=1;flashimg=1
+/nvram         emmc      /dev/block/by-name/nvram               flags=display="NvRam";backup=1;flashimg=1
+
+# Extra
+/para            emmc      /dev/block/by-name/para
+/proinfo         emmc      /dev/block/by-name/proinfo         flags=display="proinfo";backup=1;flashimg=1
+/bootloader      emmc      /dev/block/by-name/lk         flags=display="lk";backup=1;flashimg=1
+/bootloader2     emmc      /dev/block/by-name/lk2
+/logo            emmc      /dev/block/by-name/logo         flags=display="logo";backup=1;flashimg=1
+/expdb           emmc      /dev/block/by-name/expdb
+/seccfg          emmc      /dev/block/by-name/seccfg
+/tee1            emmc      /dev/block/by-name/tee1
+/tee2            emmc      /dev/block/by-name/tee2
+/scp1            emmc      /dev/block/by-name/scp11
+/scp2            emmc      /dev/block/by-name/scp2
+/sspm_1          emmc      /dev/block/by-name/sspm_1
+/sspm_2          emmc      /dev/block/by-name/sspm_2
+/dpm_1           emmc      /dev/block/by-name/dpm_11
+/dpm_2           emmc      /dev/block/by-name/dpm_2
+/mcupm_1         emmc      /dev/block/by-name/mcupm_1
+/mcupm_2         emmc      /dev/block/by-name/mcupm_2
+/md1img          emmc      /dev/block/by-name/md1img
+/md1dsp          emmc      /dev/block/by-name/md1dsp
+/md1arm7         emmc      /dev/block/by-name/md1arm7
+/md3img          emmc      /dev/block/by-name/md3img
+/cam_vpu1        emmc      /dev/block/by-name/cam_vpu1
+/cam_vpu2        emmc      /dev/block/by-name/cam_vpu2
+/cam_vpu3        emmc      /dev/block/by-name/cam_vpu3
+/gz1             emmc      /dev/block/by-name/gz1
+/gz2             emmc      /dev/block/by-name/gz2
+/spmfw           emmc      /dev/block/by-name/spmfw
+/pi_img          emmc      /dev/block/by-name/pi_img
+/boot_para       emmc      /dev/block/by-name/boot_para
+/odmdtbo         emmc      /dev/block/by-name/odmdtbo
+/otp             emmc      /dev/block/by-name/otp
+
+
+# Removable Partitions
+/external_sd          auto     /dev/block/mmcblk0p1    /dev/block/mmcblk0   flags=display="MicroSDCard";storage;wipeingui;removable
+/usb_otg              auto     /dev/block/sda1         /dev/block/sda   /dev/block/sdd1     flags=display="USB-OTG";storage;wipeingui;removable;backup=0

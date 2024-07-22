@@ -1,0 +1,17 @@
+####### generate by lopestom #######
+# from device
+ro.vendor.mediatek.platform=MT6893
+ro.vendor.mtk_f2fs_enable=1
+ro.vendor.mtk_ufs_support=1
+ro.vendor.mtk_emmc_support=1
+ro.hardware.egl=meow
+# identity
+Build.BRAND=MTK
+ro.soc.manufacturer=Mediatek
+# TEE - GATEKEEPER - KEYMASTER
+ro.odm.tee=2
+ro.hardware.kmsetkey=beanpod
+ro.hardware.gatekeeper=beanpod
+ro.vendor.mtk_microtrust_tee_support=1
+ro.vendor.keymaster_version=4.1
+####### generate by lopestom #######
